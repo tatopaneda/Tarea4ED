@@ -1,3 +1,5 @@
+package Inventario; // Añadido: Se movió la clase al paquete "inventario"
+
 import java.util.ArrayList;
 
 public class Inventario {
@@ -19,8 +21,9 @@ public class Inventario {
 
     public static void main(String[] args) {
         Inventario inventario = new Inventario();
-        Producto p1 = new Producto("Laptop", 1200.99, 10);
-        Producto p2 = new Producto("Mouse", 25.50, 50);
+        // Modificado: Uso del método de fábrica "crearProducto" en lugar del constructor directo.
+        Producto p1 = Producto.crearProducto("Laptop", 1200.99, 10);
+        Producto p2 = Producto.crearProducto("Mouse", 25.50, 50);
         
         inventario.agregar(p1);
         inventario.agregar(p2);
@@ -28,7 +31,8 @@ public class Inventario {
         System.out.println("Inventario de productos:");
         inventario.mostrar();
 
-        p1.borrarDatos();
-        p2.borrarDatos();
+        // Eliminado: Se quitaron las llamadas a "borrarDatos" ya que el método fue removido.
+        // p1.borrarDatos();
+        // p2.borrarDatos();
     }
 }
